@@ -1,14 +1,17 @@
-telegram_token: ""
-openai_api_key: ""
-openai_api_base: null  # leave null to use default api base or you can put your own base url here
-allowed_telegram_usernames: []  # if empty, the bot is available to anyone. pass a username string to allow it and/or user ids as positive integers and/or channel ids as negative integers
-new_dialog_timeout: 600  # new dialog starts after timeout (in seconds)
-return_n_generated_images: 1
-n_chat_modes_per_page: 5
-image_size: "512x512" # the image size for image generation. Generated images can have a size of 256x256, 512x512, or 1024x1024 pixels. Smaller sizes are faster to generate.
-enable_message_streaming: true  # if set, messages will be shown to user word-by-word
+telegram_token: "8306266645:AAHL67De1XJr2M6BcGTiJmY85ysJa-D-M3s"
+openai_api_key: "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"
+openai_api_base: null  # Leave as null unless you're using a custom API base (e.g., proxy)
 
-# prices
+allowed_telegram_usernames: []  # Leave empty to allow everyone
+
+new_dialog_timeout: 86400  # 24 hours auto reset
+
+return_n_generated_images: 1
+n_chat_modes_per_page: 1
+image_size: "512x512"
+enable_message_streaming: true
+
+# prices (not used in Zara mode, but kept if needed later)
 chatgpt_price_per_1000_tokens: 0.002
 gpt_price_per_1000_tokens: 0.02
 whisper_price_per_1_min: 0.006
