@@ -84,4 +84,11 @@ class Database:
 
         self.set_user_attribute(user_id, "n_used_tokens", tokens)
 
-    def get_dialog_messages(self, user_id: int, dialog_id: Optional
+    def get_dialog_messages(self, user_id: int, dialog_id: Optional[str] = None):
+    self.check_if_user_exists(user_id, raise_exception=True)
+
+    if dialog_id is None:
+        dialog_id = self.get_user_attribute(user_id, "current_dialog_id")
+
+    dialog_dict = self.dialog_collection.find_one({"_id": dialog_id, "user_id": user_id})
+    return dialog_dict["messages"]
