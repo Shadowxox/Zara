@@ -78,7 +78,7 @@ async def message_handle(update: Update, context: CallbackContext, message=None)
         await update.message.chat.send_action("typing")
         dialog_messages = db.get_dialog_messages(user_id)
         chatgpt_instance = openai_utils.ChatGPT(model="gpt-3.5-turbo")
-        answer, *_ = await chatgpt_instance.send_message(_message, dialog_messages=dialog_messages, chat_mode="zara")
+        answer, *_ = await chatgpt_instance.send_message(_message, dialog_messages=dialog_messages)
         await context.bot.edit_message_text(answer[:4096], chat_id=placeholder.chat_id, message_id=placeholder.message_id, parse_mode=ParseMode.HTML)
         new_dialog_message = {"user": _message, "bot": answer, "date": datetime.now()}
         db.set_dialog_messages(user_id, dialog_messages + [new_dialog_message])
