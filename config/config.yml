@@ -1,5 +1,5 @@
 telegram_token: "8306266645:AAHL67De1XJr2M6BcGTiJmY85ysJa-D-M3s"
-openai_api_key: "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"
+openai_api_key: "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"
 openai_api_base: null  # Leave as null unless you're using a custom API base (e.g., proxy)
 
 allowed_telegram_usernames: []  # Leave empty to allow everyone
